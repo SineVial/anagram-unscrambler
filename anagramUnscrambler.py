@@ -15,12 +15,7 @@ def main():
     	for row in reader:
     		preprocess(row, frenchDict)
     		i = i + 1
-    	#	if i > 30:
-    	#		break
-    		
-    
-    	#print(frenchDict)
-    	# test
+
     	if (not "100" in frenchDict):
     		print('ERROR!!! Missing word')
     		sys.exit()
@@ -45,30 +40,10 @@ def wordHasOnlyLetters(word):
 		if (not(character in letters)):
 			return False
 	return True
-#def searchDict(letters, frenchDict):
-#	while True:
-#		currentWord = q.get()
-#		if len(currentWord) >= len(letters) + 1:
-#			print("Current word is", currentWord)
-#			if (len(currentWord) > 14):
-#				print("Failed to find word!")
-#				sys.exit()
-#			if currentWord != 'DRACHME':
-#				if isAMatch(currentWord, letters, frenchDict):
-#					return currentWord
-#		for letter in letters:
-#			q.put(currentWord + letter)
-#			
 
 def isAMatch(currWord, letters, frenchDict):
-	#if (currWord == "IMPORTE"):
-	#	print('Debug!!')
 		
 	if (not (currWord in frenchDict)):
-		#if (currWord == "IMPORTE"):
-		#	print('FAILED!!')
-		#	print(frenchDict)
-		#	sys.exit()
 		return False
 	for letter in letters:
 		if (not currWord.count(letter)):
